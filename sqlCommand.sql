@@ -1,0 +1,1 @@
+SELECT * from breweries where brewery_type = "micro" and country = "Canada"

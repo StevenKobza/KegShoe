@@ -1,5 +1,5 @@
 <?php
-    //For this program, you will either input ?type= for just the type, ?state= for just the state, or ?type=&state= for both the state and the type
+    //For this program, you will either input ?type= for just the type, ?state= for just the state, or ?type=&state= for both the state and the type. As it stands right now, if you want to use a state with two words, please use an _ between the names
     $breweryArray;
     //I wanted to focus on the two that were set out but I also wanted to leave room to expand on it if necessary. 
     function getState($state) {
