@@ -11,6 +11,7 @@
             $page++;
             while (count($tempJsonArray) == 50) {
                 $tempJsonArray = json_decode(file_get_contents("https://api.openbrewerydb.org/breweries?by_state=$state&per_page=50&page=$page"));
+                //Merging the arrays allows for the while loop to continue until it is on the last page and then it will stop.
                 $breweryArray = array_merge($breweryArray, $tempJsonArray);
                 $page++;
                 
@@ -24,6 +25,7 @@
     function getTypeOfBrew($type) {
         $page = 1;
         //I noticed while looking through the documentation that there may be more than 1 page of a type of brewery and wanted to include them.
+        //I also wanted to make sure that I was working with PHP arrays as they allow for more functions to be used.
         $tempJsonArray = json_decode(file_get_contents("https://api.openbrewerydb.org/breweries?by_type=$type&per_page=50&page=1"));
         $breweryArray = $tempJsonArray;
         if (count($tempJsonArray) == 50) {
